@@ -10,11 +10,16 @@ use App\Http\Controllers\ResultController;
 use Illuminate\Support\Facades\Route;
 use LDAP\Result;
 
+//home
 Route::get('/', function () {
     return view('ui.home');
 })->name('home');
 
+
 //userCategories
+Route::post('changePassword',[UiController::class,'changePassword'])->name('change.password');
+
+Route::get('/editpassword',[UiController::class,'editPassword'])->name('edit.password');
 Route::get('/user/categories/',[UiController::class,'userCategories'])->name('user.categories');
 Route::get('/user/test/{id}',[UiController::class,'testStart'])->name('test.start');
 Route::post('test',[ResultController::class, 'store'])->name('client.test.store');
@@ -22,8 +27,6 @@ Route::get('results/{result_id}',[ResultController::class, 'show'])->name('clien
 Route::get('history',[UiController::class,'history'])->name('history');
 
 //storeResult
-
-
 Route::get('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/register', [AuthController::class, 'register'])->name('register');
 Route::get('/contact',[UiController::class,'contact'])->name('contact');
@@ -41,7 +44,6 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 Route::get('student/list',[AdminController::class,'studentList'])->name('student.list');
 
 //Category
-
 Route::get('/categories',[CategoryController::class,'categories'])->name('categories');
 Route::get('/category/add',[CategoryController::class,'add'])->name('add.category');
 Route::post('/category/store',[CategoryController::class,'store'])->name('store.category');
@@ -75,6 +77,7 @@ Route::get('/seeanswer/{id}',[QuestionController::class,'seeAnswers'])->name('se
 
 //AdminProfileRoute
 
+Route::post('/admin/changepassword',[AdminController::class,'changePassword'])->name('change.password');
 Route::get('/admin/profile',[AdminController::class,'adminprofile'])->name('profile.admin');
 Route::get('/admin/profile/edit/{id}',[AdminController::class,'editProfile'])->name('edit.profile.admin');
 Route::put('/admin/profile/update/{id}',[AdminController::class,'updateProflie'])->name('update.admin.profile');

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
 
@@ -8,8 +9,10 @@
 
     <title>Quiz</title>
 
-    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    {{--
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('admin-assets/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -20,61 +23,67 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('admin-assets/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
     <style>
-
         .custom-pagination .page-link {
 
-                color: rgb(199, 0, 0); /* Change the color to your desired color */
-                }
-
-
-            .custom-pagination .page-link:hover {
-                    color: rgb(16, 20, 6);
-                    background-color: rgb(35, 56, 4) /* Change the hover color */
-                    }
-        .profileimg{
-
-                width: 50%;
-                border-radius: 50%;
-                margin: 0 auto;
-                box-shadow: 3px 3px 3px rgb(156, 255, 27);
+            color: rgb(199, 0, 0);
+            /* Change the color to your desired color */
         }
 
-       .wbtn{
-        background-color: rgb(17, 63, 90);
-        overflow: hidden;
-       }
 
-       .wtext{
-        color: rgb(131, 189, 56);
+        .custom-pagination .page-link:hover {
+            color: rgb(16, 20, 6);
+            background-color: rgb(35, 56, 4)
+                /* Change the hover color */
+        }
 
-       }
-       .redtext{
-        color: rgb(241, 86, 86);
-       }
+        .profileimg {
 
-       .hover-grow-card {
-        transition: transform 0.8s;
-    }
+            width: 50%;
+            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: 3px 3px 3px rgb(156, 255, 27);
+        }
 
-    .hover-grow-card:hover {
-        transform: scale(1.02);
-    }
+        .wbtn {
+            background-color: rgb(17, 63, 90);
+            overflow: hidden;
+        }
+
+        .wtext {
+            color: rgb(131, 189, 56);
+
+        }
+
+        .redtext {
+            color: rgb(241, 86, 86);
+        }
+
+        .hover-grow-card {
+            transition: transform 0.8s;
+        }
+
+        .hover-grow-card:hover {
+            transform: scale(1.02);
+        }
 
 
-    .custom-table {
-    background-color: transparent;
-    width: 100%;
+        .custom-table {
+            background-color: transparent;
+            width: 100%;
 
 
-}
-.custom-table td, .custom-table th {
-    border-bottom: 1px solid #6e77c4; /* Add bottom border to each td and th */
-    padding: 10px; /* Add padding for cell content */
-}
+        }
 
+        .custom-table td,
+        .custom-table th {
+            border-bottom: 1px solid #6e77c4;
+            /* Add bottom border to each td and th */
+            padding: 10px;
+            /* Add padding for cell content */
+        }
     </style>
 </head>
 
@@ -100,50 +109,50 @@
 
 
 
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{route('admin.index')}}">
-                        <i class="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Home</span>
-                    </a>
-                </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="{{route('admin.index')}}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Home</span>
+                </a>
+            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('student.list')}}">
-                        <i class="fa-solid fa-users-line"></i>
-                        <span>StudentList</span>
-                    </a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('student.list')}}">
+                    <i class="fa-solid fa-users-line"></i>
+                    <span>StudentList</span>
+                </a>
+            </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('categories')}}">
-                        <i class="fas fa-users"></i>
-                        <span>Category</span>
-                    </a>
-                </li>
-
-
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('categories')}}">
+                    <i class="fas fa-users"></i>
+                    <span>Category</span>
+                </a>
+            </li>
 
 
-                <li class="nav-item }">
-                    <a class="nav-link" href="{{route('questions')}}">
-                        <i class="fas fa-fw fa-chart-area"></i>
-                        <span>Qusetion</span>
-                    </a>
-                </li>
 
-                <li class="nav-item }">
-                    <a class="nav-link" href="{{route('options')}}">
-                        <i class="fas fa-fw fa-chart-area"></i>
-                        <span>Answer options</span>
-                    </a>
-                </li>
 
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{route('scores.list')}}">
-                        <i class="fa-regular fa-building"></i>
-                        <span>Score</span>
-                    </a>
-                </li>
+            <li class="nav-item }">
+                <a class="nav-link" href="{{route('questions')}}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Qusetion</span>
+                </a>
+            </li>
+
+            <li class="nav-item }">
+                <a class="nav-link" href="{{route('options')}}">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Answer options</span>
+                </a>
+            </li>
+
+            <li class="nav-item ">
+                <a class="nav-link" href="{{route('scores.list')}}">
+                    <i class="fa-regular fa-building"></i>
+                    <span>Score</span>
+                </a>
+            </li>
 
 
 
@@ -177,7 +186,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                   <a href="{{url('/')}}" class=" fw-bold p-2 wbtn text-white btn border-success">View Us User</a>
+                    <a href="{{url('/')}}" class=" fw-bold p-2 wbtn text-white btn border-success">View Us User</a>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -273,8 +282,8 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="{{asset('admin-assets/img/undraw_profile_1.svg')}}"
-                                            alt="...">
+                                        <img class="rounded-circle"
+                                            src="{{asset('admin-assets/img/undraw_profile_1.svg')}}" alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
@@ -285,8 +294,8 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="{{asset('admin-assets/img/undraw_profile_2.svg')}}"
-                                            alt="...">
+                                        <img class="rounded-circle"
+                                            src="{{asset('admin-assets/img/undraw_profile_2.svg')}}" alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
@@ -297,8 +306,8 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="{{asset('admin-assets/img/undraw_profile_3.svg')}}"
-                                            alt="...">
+                                        <img class="rounded-circle"
+                                            src="{{asset('admin-assets/img/undraw_profile_3.svg')}}" alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
@@ -329,10 +338,11 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><b>{{Auth::user()->name}}</b></span>
+                                <span
+                                    class="mr-2 d-none d-lg-inline text-gray-600 small"><b>{{Auth::user()->name}}</b></span>
                                 @if (auth()->user()->image)
                                 <img class="img-profile rounded-circle object-fit-cover"
-                                src="{{asset('storage/profile-images/'. Auth::user()->image)}}">
+                                    src="{{asset('storage/profile-images/'. Auth::user()->image)}}">
                                 @endif
                             </a>
                             <!-- Dropdown - User Information -->
@@ -343,16 +353,17 @@
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-900"></i>
                                     Profile
                                 </a>
-                                <a class="dropdown-item" href="">
+                                <a class="dropdown-item" href="{{route('edit.password')}}">
                                     <span style="color: red;">
-                                    <i class="fas fa-fw fa-cog mr-2"></i>
-                                </span>
+                                        <i class="fas fa-fw fa-cog mr-2"></i>
+                                    </span>
                                     Change Password
                                 </a>
 
                                 <div class="dropdown-divider"></div>
                                 <form action="{{route('logout')}}" method="POST"> @csrf
-                                    <button class="dropdown-item" data-toggle="modal" data-target="#logoutModal" onclick="return confirm('Are u sure to logout?')">
+                                    <button class="dropdown-item" data-toggle="modal" data-target="#logoutModal"
+                                        onclick="return confirm('Are u sure to logout?')">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 " style="color: red;"></i>
                                         Logout
                                     </button>
@@ -381,7 +392,7 @@
             <footer class="sticky-footer">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto ">
-                      NaingwinKo
+                        NaingwinKo
                     </div>
                 </div>
             </footer>

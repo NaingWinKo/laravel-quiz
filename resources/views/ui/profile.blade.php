@@ -1,4 +1,4 @@
-@extends('Admin.layout')
+@extends('ui.master')
 @section('content')
 <div class="">
     <div class="page-wrapper mt-0 ">
@@ -21,8 +21,8 @@
                                 <li class="list-group-item bg-transparent text-white text-sm"><b>Email :</b>&nbsp; {{ $user->email }}</li>
                                 <li class="list-group-item bg-transparent text-white text-sm"><b>ရာထူး :</b>&nbsp; {{ $user->role }}</li>
                                 <li class="list-group-item bg-transparent">
-                                    <a href="{{route('edit.profile.admin',$user->id)}}" class="btn btn-sm btn-primary float-end ml-4 border-success"> Edit Profile</a>
-                                    <a href="{{route('admin.index')}}" class="btn btn-sm wbtn text-white float-end border-success">Back</a>
+                                    <a href="{{route('edit.password',$user->id)}}" class="btn btn-sm btn-primary float-end ml-4 border-success">Change Password</a>
+                                    <a href="{{route('home')}}" class="btn btn-sm wbtn text-white float-end border-success">Back</a>
                                 </li>
                             </ul>
                         </div>

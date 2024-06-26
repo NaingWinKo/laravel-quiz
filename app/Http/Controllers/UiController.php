@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
-use Illuminate\Http\Request;
+use Carbon\Carbon;
+use App\Models\User;
 use App\Models\Option;
 use App\Models\Result;
 
-use Carbon\Carbon;
+use App\Models\Category;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class UiController extends Controller
@@ -18,6 +19,17 @@ class UiController extends Controller
     }
     public function about(){
         return view('ui.about');
+    }
+    public function editPassword(){
+        $id=Auth::user()->id;
+        $user=User::findOrfail($id);
+        return view('ui.editPassword',compact('user'));
+    }
+    public function changePassword(){
+        
+        
+    return "change password successfully";
+    
     }
 
 

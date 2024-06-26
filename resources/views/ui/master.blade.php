@@ -11,8 +11,9 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
+  <link rel="stylesheet" href="">
 
-  <title>NaingWinKO</title>
+  <title>Quiz</title>
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
@@ -39,7 +40,7 @@
     body, html {
       height: auto;
       margin: 0;
-      background-color:  #c1d9ec;
+      background-color:  #b512e741;
 
     }
 
@@ -114,13 +115,14 @@
                 </li>
                 @if(Auth::check())
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                  <a class="nav-link dropdown-toggle" href="{{route('edit.password')}}" id="navbarDropdownMenuLink" role="button"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:rgb(14, 47, 48); font-family: 'Open Sans', sans-serif; font-weight: bold;">
                     {{Auth::user()->name}}
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{{ Auth::user()->role == 'admin' ? route('profile.admin') : route('home') }}">Profile</a>
+                    <a class="dropdown-item" href="{{ Auth::user()->role == 'admin' ? route('admin.index') : route('profile.admin') }}">Profile</a>
                     <a class="dropdown-item" href="{{route('history')}}">History</a>
+                    <a href="{{route('edit.password')}}" class="dropdown-item">Change Password</a>
                     <div class="dropdown-divider"></div>
                     <form method="POST" action="{{ route('logout') }}">
                       @csrf
